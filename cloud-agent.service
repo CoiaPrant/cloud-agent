@@ -1,0 +1,13 @@
+[Unit]
+Description=Cloud Agent Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Restart=on-failure
+RestartSec=5s
+ExecStart=/etc/cloud/agent/cloud-agent -config=/etc/cloud/agent/config.json
+
+[Install]
+WantedBy=multi-user.target
